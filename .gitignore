@@ -1,0 +1,14 @@
+# Python stuff
+__pycache__/
+*.py[cod]
+venv/
+.idea/
+
+# Big Data files (Do NOT upload to GitHub)
+raw_data/
+*.csv
+*.ducklake/
+*.parquet
+
+# Zips
+*.zip
