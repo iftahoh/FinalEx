@@ -24,12 +24,12 @@ print("---Start Making Data Lake---")
 # --- Weather Data Build ---
 print("\n# Process The Weather Daily Data")
 try:
-    # הכנסת כל הנתונים למאגר
+#יצירת המאגר השלם 
     con.execute(f"""
         COPY (SELECT * FROM read_csv('{weather_csv_path}', AUTO_DETECT=True)) 
         TO '{full_lake_path}/weather.parquet' (FORMAT PARQUET);
     """)
-    # הוספת מדגם כדי שנוכל להגיש
+# יצירת מדגם המאגר
     con.execute(f"""
         COPY (SELECT * FROM read_csv('{weather_csv_path}', AUTO_DETECT=True)) 
         TO '{sample_lake_path}/weather.parquet' (FORMAT PARQUET);
